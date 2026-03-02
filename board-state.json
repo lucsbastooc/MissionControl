@@ -812,7 +812,7 @@
       "id": "FEATURE-001-V2",
       "title": "Task Detail Modal v2",
       "description": "Modal with lifecycle history, comments, actions panel",
-      "status": "in_progress",
+      "status": "done",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Modal opens on click",
