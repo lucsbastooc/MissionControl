@@ -1,11 +1,15 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url');
 
 const PORT = 3000;
 const BOARD_DIR = path.join(__dirname, '..');
 
 const server = http.createServer((req, res) => {
+  const parsedUrl = url.parse(req.url, true);
+  const pathname = parsedUrl.pathname;
+  
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -16,7 +20,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  if (req.url === '/board-state.json') {
+  if (pathname === '/board-state.json') {
     const filePath = path.join(BOARD_DIR, 'board-state.json');
     fs.readFile(filePath, (err, data) => {
       if (err) {
@@ -30,7 +34,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+  let filePath = path.join(__dirname, pathname === '/' ? 'index.html' : pathname);
   
   fs.readFile(filePath, (err, data) => {
     if (err) {

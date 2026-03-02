@@ -795,6 +795,18 @@
           "timestamp": "2026-03-02T19:50:00Z"
         }
       ]
+    },
+    {
+      "id": "FEATURE-DND-001",
+      "title": "Drag and Drop Task Management",
+      "description": "Implement drag and drop",
+      "status": "backlog",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Drag between columns",
+        "Reorder within column",
+        "Status auto-update"
+      ]
     }
   ],
   "updatedAt": "2026-03-02T19:40:00Z"
