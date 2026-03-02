@@ -820,6 +820,13 @@
         "Comments section",
         "Actions panel"
       ]
+    },
+    {
+      "id": "FEATURE-001-V2-T1",
+      "title": "Decompose Task Modal into subtasks",
+      "description": "Break FEATURE-001-V2 into atomic tasks",
+      "status": "backlog",
+      "owner": "jarvis"
     }
   ],
   "updatedAt": "2026-03-02T19:40:00Z"
