@@ -800,7 +800,7 @@
       "id": "FEATURE-DND-001",
       "title": "Drag and Drop Task Management",
       "description": "Implement drag and drop",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Drag between columns",

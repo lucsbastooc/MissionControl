@@ -204,3 +204,7 @@
 [2026-03-02 20:15] | JARVIS | CHECK | jarvis | in_progress=0 backlog=0
 [2026-03-02 20:15] | JARVIS | CHECK | banner | in_progress=0 backlog=0
 [2026-03-02 20:15] | JARVIS | CHECK | pepper | in_progress=0 backlog=0
+[2026-03-02 20:20] | JARVIS | CHECK | jarvis | in_progress=0 backlog=1
+[2026-03-02 20:20] | JARVIS | DISPATCH | jarvis | FEATURE-DND-001
+[2026-03-02 20:20] | JARVIS | CHECK | banner | in_progress=0 backlog=0
+[2026-03-02 20:20] | JARVIS | CHECK | pepper | in_progress=0 backlog=0
