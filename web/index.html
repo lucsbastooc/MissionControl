@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Control</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; }
+    .header { background: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
+    .header h1 { font-size: 20px; font-weight: 600; color: #1e293b; }
+    .stats { display: flex; gap: 16px; }
+    .stat { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+    .stat-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .board { display: flex; gap: 16px; padding: 24px; overflow-x: auto; min-height: calc(100vh - 70px); }
+    .column { background: #f1f5f9; border-radius: 12px; min-width: 280px; max-width: 280px; }
+    .column-header { padding: 16px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+    .column-header h3 { font-size: 14px; font-weight: 600; color: #475569; text-transform: uppercase; }
+    .column-count { background: #e2e8f0; padding: 2px 8px; border-radius: 12px; font-size: 12px; color: #64748b; }
+    .cards { padding: 12px; min-height: 200px; }
+    .card { background: white; border-radius: 8px; padding: 12px; margin-bottom: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .card-id { font-size: 10px; color: #94a3b8; font-family: monospace; margin-bottom: 4px; }
+    .card-title { font-size: 14px; font-weight: 500; color: #1e293b; margin-bottom: 8px; }
+    .card-footer { display: flex; justify-content: space-between; align-items: center; }
+    .card-owner { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+    .card-owner.jarvis { background: #dbeafe; color: #1d4ed8; }
+    .card-owner.banner { background: #dcfce7; color: #16a34a; }
+    .status-backlog { border-left: 3px solid #94a3b8; }
+    .status-in_progress { border-left: 3px solid #f59e0b; }
+    .status-review { border-left: 3px solid #f97316; }
+    .status-done { border-left: 3px solid #22c55e; }
+    .empty-column { padding: 24px; text-align: center; color: #94a3b8; font-size: 13px; }
+    #error { color: red; padding: 20px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>🚀 Mission Control</h1>
+    <div class="stats">
+      <div class="stat"><span class="stat-dot" style="background:#94a3b8"></span><span id="backlog">0</span></div>
+      <div class="stat"><span class="stat-dot" style="background:#f59e0b"></span><span id="in_progress">0</span></div>
+      <div class="stat"><span class="stat-dot" style="background:#f97316"></span><span id="review">0</span></div>
+      <div class="stat"><span class="stat-dot" style="background:#22c55e"></span><span id="done">0</span></div>
+    </div>
+  </header>
+  <div id="error"></div>
+  <div class="board" id="board">Loading...</div>
+  <script>
+    const STATUSES = ['backlog', 'in_progress', 'review', 'done'];
+    const LABELS = { backlog: 'Backlog', in_progress: 'In Progress', review: 'Review', done: 'Done' };
+    
+    async function load() {
+      try {
+        document.getElementById('error').textContent = '';
+        const res = await fetch('/board-state.json?t=' + Date.now());
+        if (!res.ok) throw new Error('Failed to load: ' + res.status);
+        const data = await res.json();
+        console.log('Data loaded:', data.cards.length, 'cards');
+        
+        const counts = { backlog:0, in_progress:0, review:0, done:0 };
+        data.cards.forEach(c => counts[c.status] = (counts[c.status]||0)+1);
+        
+        document.getElementById('backlog').textContent = counts.backlog;
+        document.getElementById('in_progress').textContent = counts.in_progress;
+        document.getElementById('review').textContent = counts.review;
+        document.getElementById('done').textContent = counts.done;
+        
+        let html = '';
+        STATUSES.forEach(s => {
+          const tasks = data.cards.filter(c => c.status === s);
+          html += '<div class="column"><div class="column-header"><h3>'+LABELS[s]+'</h3><span class="column-count">'+tasks.length+'</span></div><div class="cards">';
+          if (tasks.length === 0) {
+            html += '<div class="empty-column">No tasks</div>';
+          } else {
+            tasks.forEach(t => {
+              html += '<div class="card status-'+t.status+'"><div class="card-id">'+t.id+'</div><div class="card-title">'+t.title+'</div><div class="card-footer"><span class="card-owner '+t.owner+'">'+t.owner+'</span></div></div>';
+            });
+          }
+          html += '</div></div>';
+        });
+        
+        document.getElementById('board').innerHTML = html;
+        console.log('Rendered');
+      } catch(e) {
+        console.error(e);
+        document.getElementById('error').textContent = 'Error: ' + e.message;
+      }
+    }
+    load();
+    setInterval(load, 10000);
+  </script>
+</body>
+</html>

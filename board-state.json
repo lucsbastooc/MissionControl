@@ -1,0 +1,801 @@
+{
+  "boards": [
+    {
+      "id": "board-001",
+      "name": "Mission Control Visual",
+      "status": "in_progress"
+    }
+  ],
+  "cards": [
+    {
+      "id": "EPIC-1-001",
+      "title": "Initialize monorepo with pnpm workspaces",
+      "description": "Set up monorepo structure with /apps /web /api /shared-types",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Monorepo created",
+        "Workspaces configured"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-1-002-T1",
+      "title": "Create shared-types package structure",
+      "description": "Set up package.json, tsconfig, export entry points",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Package builds without errors",
+        "Exports are discoverable"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-1-002-T2",
+      "title": "Define TypeScript interfaces (Task, Comment, Status)",
+      "description": "Create interfaces for Task, Comment, Status, Board types",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Task interface includes id, title, description, status, owner, acceptance_criteria, comments",
+        "Status type is union of: backlog, in_progress, review, done, blocked"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-1-002-T3",
+      "title": "Export types from shared-types",
+      "description": "Export all interfaces and types for consumption by other packages",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "All types exportable",
+        "No circular dependencies"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-1-002",
+      "title": "Create shared-types package",
+      "description": "Define Task, Comment, Status types",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Types defined",
+        "Exported"
+      ],
+      "comments": [],
+      "parent": "EPIC-1-002-T1"
+    },
+    {
+      "id": "EPIC-2-001-T1",
+      "title": "Create Board container component with flex layout",
+      "description": "Set up main Board component with horizontal flex container, responsive sizing",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Board renders full width/height",
+        "Flex layout enables horizontal scroll on overflow"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-2-001-T2",
+      "title": "Define column configuration",
+      "description": "Create column config with status mapping, colors, labels for all 5 columns",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Config defines Backlog, In Progress, Review, Done, Blocked",
+        "Colors and labels match spec"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-2-001-T3",
+      "title": "Create Column component with header and scrollable area",
+      "description": "Build reusable Column component with title, count badge, scrollable task list",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Column shows header with title and count",
+        "Task list scrolls independently"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "Validated: Header with title/count implemented in JSX. Added styles.css with .column-content { overflow-y: auto } for independent scrolling. Build passes.",
+          "timestamp": "2026-03-02T14:21:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-2-001-T4",
+      "title": "Render tasks filtered by status in each column",
+      "description": "Connect board to state, filter tasks by status and render in correct column",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Tasks appear in correct column based on status",
+        "New tasks appear in real-time"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-2-001-T5",
+      "title": "Add empty state for columns with no tasks",
+      "description": "Display placeholder message in empty columns",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Empty columns show placeholder text",
+        "Placeholder is visually subtle"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-2-001-T6",
+      "title": "Add column styling (colors, borders, backgrounds)",
+      "description": "Apply column-specific colors, borders, background styles per spec",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Each column has distinct header color",
+        "Backgrounds and borders match design"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-2-001",
+      "title": "Create Board component with column layout",
+      "description": "Implement 5 columns: Backlog, In Progress, Review, Done, Blocked",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "5 columns displayed",
+        "Tasks render in columns"
+      ],
+      "comments": [],
+      "parent": "EPIC-2-001-T1"
+    },
+    {
+      "id": "EPIC-2-002-T1",
+      "title": "Install and configure @dnd-kit dependencies",
+      "description": "Add @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities to project",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Packages installed",
+        "No peer dependency conflicts"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "Installed @dnd-kit/core ^6.3.1, @dnd-kit/sortable ^10.0.0, @dnd-kit/utilities ^3.2.2 via pnpm. Build passes. No peer dependency conflicts.",
+          "timestamp": "2026-03-02T14:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-2-002-T2",
+      "title": "Implement DnD context and sensors",
+      "description": "Set up DndContext with mouse/keyboard sensors",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Context wraps board",
+        "Sensors respond to input"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "Implementing DnD context with mouse and keyboard sensors. Cron job picked up oldest backlog task.",
+          "timestamp": "2026-03-02T18:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-2-002-T3",
+      "title": "Create Droppable column components",
+      "description": "Make each column a droppable zone with proper hooks",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Columns accept drops",
+        "Visual feedback on drag"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-2-002-T4",
+      "title": "Implement drag handlers and status update",
+      "description": "Handle onDragEnd, update task status in state/API",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Drag completes",
+        "Status changes on drop"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-3-001-T1",
+      "title": "Create Card base component with styling",
+      "description": "Card container with base styles and hover effects",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Card renders",
+        "Hover states work"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-3-001-T2",
+      "title": "Add task ID and title display",
+      "description": "Show formatted ID and title on card",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "ID visible",
+        "Title truncates properly"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-3-001-T3",
+      "title": "Add owner badge component",
+      "description": "Display owner avatar/name badge on card",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Badge displays",
+        "Owner info readable"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-3-001-T4",
+      "title": "Add status color indicator and metadata",
+      "description": "Status color bar, comment count, blocked indicator",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Color matches status",
+        "Icons display correctly"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-4-001-T1",
+      "title": "Create Drawer component structure",
+      "description": "Side panel layout with open/close animation",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Drawer animates",
+        "Overlay works"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-4-001-T2",
+      "title": "Implement task detail display",
+      "description": "Show title, description, acceptance criteria in drawer",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "All fields display",
+        "Text is readable"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-4-001-T3",
+      "title": "Add status and owner controls",
+      "description": "Editable status dropdown and owner selector",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Can change status",
+        "Can reassign owner"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-4-001-T4",
+      "title": "Implement comments section",
+      "description": "Display and add comments in drawer",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Comments list",
+        "Can add new comment"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "Comments section implemented in Drawer.jsx with display, add, and type selection. Fully functional.",
+          "timestamp": "2026-03-02T19:05:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-5-001-T1",
+      "title": "Create FilterBar component",
+      "description": "Container for all filter controls",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Bar renders",
+        "Filters stack horizontally"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "FilterBar component created with search, status pills, owner pills, and blocked toggle.",
+          "timestamp": "2026-03-02T19:05:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-5-001-T2",
+      "title": "Implement search filter",
+      "description": "Text search across title and description",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Search filters results",
+        "Debounced input"
+      ],
+      "comments": []
+    },
+    {
+      "id": "EPIC-5-001-T3",
+      "title": "Implement status and owner dropdowns",
+      "description": "Filter by status and owner via dropdowns",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Dropdown works",
+        "Multiple selection allowed"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "Status and owner filters implemented as clickable pills with multi-select.",
+          "timestamp": "2026-03-02T19:05:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-5-001-T4",
+      "title": "Add blocked toggle and URL persistence",
+      "description": "Toggle to show blocked tasks, sync filters to URL",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Toggle works",
+        "URL reflects filter state"
+      ],
+      "comments": [
+        {
+          "author": "amora",
+          "text": "Blocked toggle and URL persistence implemented. Filters sync to URL params (search, statuses, owners, blocked).",
+          "timestamp": "2026-03-02T19:05:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-6-001",
+      "title": "Create System Overview Panel",
+      "description": "Header panel showing column counts and system state",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Counts display",
+        "Updates on task change"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-7-001",
+      "title": "Create Project State View",
+      "description": "Collapsible section with modules, patterns, risks",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Section collapsible",
+        "Data displays"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-001",
+      "title": "Implement WebSocket connection",
+      "description": "Set up WebSocket client for real-time updates",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Connects to server",
+        "Reconnects on disconnect"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-002-T1",
+      "title": "Implement board state sync",
+      "description": "Sync board state on WebSocket events",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Board updates live",
+        "No conflicts"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-9-001",
+      "title": "Implement validation rules",
+      "description": "Single in_progress, valid transitions, required fields, blocked comments",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Rules enforced",
+        "User feedback on violation"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-6-001-T1",
+      "title": "Create OverviewPanel container component",
+      "description": "Header container with flex layout for stats display",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Container renders",
+        "Flex layout works"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-6-001-T2",
+      "title": "Implement column count widgets",
+      "description": "Display task count per column with color coding",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Counts accurate",
+        "Colors match column"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-6-001-T3",
+      "title": "Add system state indicators",
+      "description": "Show WebSocket connection status, sync state, last update time",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Status icons visible",
+        "Updates in real-time"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-7-001-T1",
+      "title": "Create ProjectStateView container",
+      "description": "Collapsible section container with toggle button",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Section collapsible",
+        "Toggle works"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-7-001-T2",
+      "title": "Implement modules overview",
+      "description": "Show list of modules/packages in project",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Modules list displays",
+        "Click to expand"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-7-001-T3",
+      "title": "Add patterns section",
+      "description": "Display architectural patterns and decisions",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Patterns listed",
+        "Descriptions visible"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-7-001-T4",
+      "title": "Add risks/trade-offs panel",
+      "description": "Show known risks and trade-off decisions",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Risks displayed",
+        "Trade-offs documented"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-001-T1",
+      "title": "Set up WebSocket client module",
+      "description": "Create WS client with reconnection logic",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Client created",
+        "Exports connection handler"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-001-T2",
+      "title": "Implement connection state management",
+      "description": "Track connected/disconnected/reconnecting states",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "State updates",
+        "UI reflects state"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-001-T3",
+      "title": "Add auto-reconnect with backoff",
+      "description": "Reconnect on disconnect with exponential backoff",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Reconnects automatically",
+        "Backoff works"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-002-T2",
+      "title": "Handle conflict resolution",
+      "description": "Merge concurrent updates without data loss",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Conflicts resolved",
+        "No data loss"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-8-002-T3",
+      "title": "Optimistic UI updates",
+      "description": "Update UI immediately, rollback on failure",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "UI feels instant",
+        "Rollback works"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-9-001-T1",
+      "title": "Implement single in_progress rule",
+      "description": "Prevent multiple tasks in_progress per owner",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Rule enforced",
+        "User feedback shown"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-9-001-T2",
+      "title": "Add valid transition checks",
+      "description": "Validate status transitions (e.g. no Done->Backlog)",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Invalid blocked",
+        "Valid allowed"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-9-001-T3",
+      "title": "Implement required fields validation",
+      "description": "Require title, description before leaving Backlog",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Fields validated",
+        "Errors shown"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "EPIC-9-001-T4",
+      "title": "Add blocked task comment requirement",
+      "description": "Require comment when moving to Blocked",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Comment prompted",
+        "Block enforced without"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task completed by sub-agent implementation",
+          "timestamp": "2026-03-02T19:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "FEATURE-001",
+      "title": "Task Detail Modal",
+      "description": "When clicking on a task card, a modal must open displaying full task details",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Modal opens on click",
+        "Displays task details",
+        "Shows lifecycle history"
+      ]
+    },
+    {
+      "id": "FEATURE-002",
+      "title": "Drag and Drop Task Management",
+      "description": "Implement drag and drop functionality in the Kanban board",
+      "status": "done",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Drag task between columns",
+        "Reorder within column",
+        "Status updates on drop"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Drag and drop fully implemented with @dnd-kit. Supports dragging between columns, reordering within columns, and automatic status updates on drop.",
+          "timestamp": "2026-03-02T19:50:00Z"
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-03-02T19:40:00Z"
+}
