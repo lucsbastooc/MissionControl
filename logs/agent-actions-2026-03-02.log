@@ -229,3 +229,8 @@
 [2026-03-02 20:45] | JARVIS | DISPATCH | jarvis | FEATURE-001-V2-T1
 [2026-03-02 20:45] | JARVIS | CHECK | banner | in_progress=0 backlog=0
 [2026-03-02 20:45] | JARVIS | CHECK | pepper | in_progress=0 backlog=0
+[2026-03-02 20:50] | JARVIS | CHECK | jarvis | in_progress=1 backlog=0
+[2026-03-02 20:50] | jarvis | COMPLETE | FEATURE-001-V2-T1 | Moved to review
+[2026-03-02 20:50] | JARVIS | CHECK | banner | in_progress=0 backlog=0
+[2026-03-02 20:50] | JARVIS | CHECK | pepper | in_progress=0 backlog=0
+[2026-03-02 20:50] | PEPPER | DONE | FEATURE-001-V2-T1 | Auto completed
