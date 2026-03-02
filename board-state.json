@@ -800,12 +800,25 @@
       "id": "FEATURE-DND-001",
       "title": "Drag and Drop Task Management",
       "description": "Implement drag and drop",
-      "status": "in_progress",
+      "status": "done",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Drag between columns",
         "Reorder within column",
         "Status auto-update"
+      ]
+    },
+    {
+      "id": "FEATURE-001-V2",
+      "title": "Task Detail Modal v2",
+      "description": "Modal with lifecycle history, comments, actions panel",
+      "status": "backlog",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Modal opens on click",
+        "Lifecycle history",
+        "Comments section",
+        "Actions panel"
       ]
     }
   ],
