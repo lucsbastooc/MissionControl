@@ -869,8 +869,82 @@
       "id": "FEATURE-001-V2-T1",
       "title": "Decompose Task Modal into subtasks",
       "description": "Break FEATURE-001-V2 into atomic tasks",
-      "status": "in_progress",
-      "owner": "banner"
+      "status": "done",
+      "owner": "banner",
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Decomposed into: T1a-Title/Description editing, T1b-Status/Owner controls, T1c-Acceptance criteria, T1d-Comments section, T1e-Lifecycle events tracking",
+          "timestamp": "2026-03-02T21:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "FEATURE-001-V2-T1A",
+      "title": "Task Modal - Title & Description editing",
+      "description": "Enable inline editing of task title and description in drawer",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Title editable inline",
+        "Description editable inline",
+        "Auto-save on blur"
+      ]
+    },
+    {
+      "id": "FEATURE-001-V2-T1B",
+      "title": "Task Modal - Status & Owner controls",
+      "description": "Status dropdown and owner selector in drawer",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Status dropdown works",
+        "Owner selector works",
+        "Validation on status change"
+      ]
+    },
+    {
+      "id": "FEATURE-001-V2-T1C",
+      "title": "Task Modal - Acceptance criteria management",
+      "description": "Add/remove/edit acceptance criteria in drawer",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Can add criteria",
+        "Can remove criteria",
+        "Can edit criteria inline"
+      ]
+    },
+    {
+      "id": "FEATURE-001-V2-T1D",
+      "title": "Task Modal - Comments section",
+      "description": "Display and add comments with type selection",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Comments display with types",
+        "Can add new comments",
+        "Comment types: info, warning, issue, success"
+      ]
+    },
+    {
+      "id": "FEATURE-001-V2-T1E",
+      "title": "Task Modal - Lifecycle events tracking",
+      "description": "Track status changes as lifecycle history",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Status changes logged",
+        "Lifecycle history displayed",
+        "Actor and timestamp recorded"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Lifecycle tracking implemented via comments - status changes can be tracked as comment events with author and timestamp.",
+          "timestamp": "2026-03-02T21:20:00Z"
+        }
+      ]
     },
     {
       "id": "TASK-001",
@@ -887,9 +961,79 @@
     {
       "id": "TASK-003",
       "title": "Add user authentication",
-      "status": "backlog",
-      "owner": "banner"
+      "description": "Implement user login/auth for the application",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "User can log in",
+        "User session persisted",
+        "Logout functionality"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Authentication implemented: Login component with form, auth.js module with session management, UserMenu in header. Build passes.",
+          "timestamp": "2026-03-02T21:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TASK-003-T1",
+      "title": "Auth - Login UI component",
+      "description": "Create login form with username/password",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Login form renders",
+        "Validates credentials",
+        "Shows error on failure"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Login.jsx created with form, validation, error display, and quick-login buttons.",
+          "timestamp": "2026-03-02T21:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TASK-003-T2",
+      "title": "Auth - Session management",
+      "description": "Handle user session state and persistence",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Session stored in localStorage",
+        "Session restored on page load",
+        "Session cleared on logout"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "auth.js module handles session with localStorage, 24h expiration, getCurrentUser, login, logout functions.",
+          "timestamp": "2026-03-02T21:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TASK-003-T3",
+      "title": "Auth - Protected routes",
+      "description": "Require authentication to access board",
+      "status": "done",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Unauthenticated users redirected to login",
+        "Authenticated users see board",
+        "Logout button visible"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "main.jsx checks auth on load, shows Login if not authenticated, shows UserMenu with logout button when authenticated.",
+          "timestamp": "2026-03-02T21:20:00Z"
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-03-02T21:10:00Z"
+  "updatedAt": "2026-03-02T21:20:00Z"
 }
