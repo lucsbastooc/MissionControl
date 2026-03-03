@@ -11,7 +11,7 @@
       "id": "EPIC-1-001-T1",
       "title": "Create monorepo root structure",
       "description": "Create root package.json with pnpm workspaces, set up /apps /web /api /shared-types directories",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "banner",
       "acceptance_criteria": [
         "package.json has workspaces config",
@@ -1086,7 +1086,10 @@
       ]
     },
     {
-      "status": "in_progress",
+      "id": "FEATURE-DND-V2-001",
+      "title": "Drag and Drop Task Management v2",
+      "description": "Drag between columns, reorder within column, status auto-update, real-time sync",
+      "status": "done",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Drag between columns",
@@ -1094,16 +1097,33 @@
         "Status auto-update",
         "Visual feedback",
         "Real-time sync"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Implemented: Enhanced visual feedback (drag animations, pulse effect, drop indicators), Integrated WebSocket for real-time sync between clients, lifecycle events tracked on status changes",
+          "timestamp": "2026-03-02T21:35:00Z"
+        }
       ]
     },
     {
-      "status": "in_progress",
+      "id": "FEATURE-MODAL-V3-001",
+      "title": "Task Detail Modal v3",
+      "description": "Modal with lifecycle, history, comments, actions",
+      "status": "done",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Modal opens on click",
         "Lifecycle history",
         "Comments section",
         "Actions panel"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Implemented: Dedicated lifecycle history section in drawer showing status changes and issues with timeline view, collapsible section, actor and timestamp tracking",
+          "timestamp": "2026-03-02T21:35:00Z"
+        }
       ]
     }
   ],
