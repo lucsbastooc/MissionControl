@@ -11,7 +11,7 @@
       "id": "EPIC-1-001-T1",
       "title": "Create monorepo root structure",
       "description": "Create root package.json with pnpm workspaces, set up /apps /web /api /shared-types directories",
-      "status": "in_progress",
+      "status": "done",
       "owner": "banner",
       "acceptance_criteria": [
         "package.json has workspaces config",
@@ -23,7 +23,7 @@
       "id": "EPIC-1-001-T2",
       "title": "Configure TypeScript for monorepo",
       "description": "Set up root tsconfig.json and package-specific tsconfigs",
-      "status": "backlog",
+      "status": "done",
       "owner": "banner",
       "acceptance_criteria": [
         "Root tsconfig extends base",
@@ -35,7 +35,7 @@
       "id": "EPIC-1-001-T3",
       "title": "Set up build scripts and workspace dependencies",
       "description": "Configure shared dependencies, scripts for building all packages",
-      "status": "backlog",
+      "status": "done",
       "owner": "banner",
       "acceptance_criteria": [
         "pnpm install works at root",
@@ -47,7 +47,7 @@
       "id": "EPIC-1-001",
       "title": "Initialize monorepo with pnpm workspaces",
       "description": "Set up monorepo structure with /apps /web /api /shared-types",
-      "status": "in_progress",
+      "status": "done",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Monorepo created",
