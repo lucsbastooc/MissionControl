@@ -10,1039 +10,435 @@
     {
       "id": "EPIC-1-001-T1",
       "title": "Create monorepo root structure",
-      "description": "Create root package.json with pnpm workspaces, set up /apps /web /api /shared-types directories",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "package.json has workspaces config",
-        "Directories created"
-      ],
-      "parent": "EPIC-1-001",
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-001-T2",
       "title": "Configure TypeScript for monorepo",
-      "description": "Set up root tsconfig.json and package-specific tsconfigs",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Root tsconfig extends base",
-        "Packages have own tsconfigs"
-      ],
-      "parent": "EPIC-1-001",
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-001-T3",
       "title": "Set up build scripts and workspace dependencies",
-      "description": "Configure shared dependencies, scripts for building all packages",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "pnpm install works at root",
-        "Build script runs all packages"
-      ],
-      "parent": "EPIC-1-001",
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-001",
       "title": "Initialize monorepo with pnpm workspaces",
-      "description": "Set up monorepo structure with /apps /web /api /shared-types",
       "status": "done",
       "owner": "jarvis",
-      "acceptance_criteria": [
-        "Monorepo created",
-        "Workspaces configured"
-      ],
-      "comments": [],
-      "parent": null,
       "execution_role": "ARCHITECT"
     },
     {
       "id": "EPIC-1-002-T1",
       "title": "Create shared-types package structure",
-      "description": "Set up package.json, tsconfig, export entry points",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Package builds without errors",
-        "Exports are discoverable"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Created shared-types package with package.json, tsconfig.json, and index.ts exports. Includes Task, Comment, TaskStatus, Board, User, LifecycleEvent, Subtask types.",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-002-T2",
-      "title": "Define TypeScript interfaces (Task, Comment, Status)",
-      "description": "Create interfaces for Task, Comment, Status, Board types",
+      "title": "Define TypeScript interfaces",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Task interface includes id, title, description, status, owner, acceptance_criteria, comments",
-        "Status type is union of: backlog, in_progress, review, done, blocked"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "All TypeScript interfaces defined: Task, Comment, TaskStatus, Board, User, TaskFilters, ConnectionState, ValidationResult, LifecycleEvent, Subtask, and VALID_TRANSITIONS.",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-002-T3",
       "title": "Export types from shared-types",
-      "description": "Export all interfaces and types for consumption by other packages",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "All types exportable",
-        "No circular dependencies"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "All types exported from index.ts. Package.json configured with proper exports field.",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-002",
       "title": "Create shared-types package",
-      "description": "Define Task, Comment, Status types",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Types defined",
-        "Exported"
-      ],
-      "comments": [],
-      "parent": "EPIC-1-002-T1",
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T1",
       "title": "Create Board container component with flex layout",
-      "description": "Set up main Board component with horizontal flex container, responsive sizing",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Board renders full width/height",
-        "Flex layout enables horizontal scroll on overflow"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T2",
       "title": "Define column configuration",
-      "description": "Create column config with status mapping, colors, labels for all 5 columns",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Config defines Backlog, In Progress, Review, Done, Blocked",
-        "Colors and labels match spec"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T3",
       "title": "Create Column component with header and scrollable area",
-      "description": "Build reusable Column component with title, count badge, scrollable task list",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Column shows header with title and count",
-        "Task list scrolls independently"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "Validated: Header with title/count implemented in JSX. Added styles.css with .column-content { overflow-y: auto } for independent scrolling. Build passes.",
-          "timestamp": "2026-03-02T14:21:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T4",
-      "title": "Render tasks filtered by status in each column",
-      "description": "Connect board to state, filter tasks by status and render in correct column",
+      "title": "Render tasks filtered by status",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Tasks appear in correct column based on status",
-        "New tasks appear in real-time"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T5",
-      "title": "Add empty state for columns with no tasks",
-      "description": "Display placeholder message in empty columns",
+      "title": "Add empty state for columns",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Empty columns show placeholder text",
-        "Placeholder is visually subtle"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T6",
-      "title": "Add column styling (colors, borders, backgrounds)",
-      "description": "Apply column-specific colors, borders, background styles per spec",
+      "title": "Add column styling",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Each column has distinct header color",
-        "Backgrounds and borders match design"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001",
       "title": "Create Board component with column layout",
-      "description": "Implement 5 columns: Backlog, In Progress, Review, Done, Blocked",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "5 columns displayed",
-        "Tasks render in columns"
-      ],
-      "comments": [],
-      "parent": "EPIC-2-001-T1",
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T1",
       "title": "Install and configure @dnd-kit dependencies",
-      "description": "Add @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities to project",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Packages installed",
-        "No peer dependency conflicts"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "Installed @dnd-kit/core ^6.3.1, @dnd-kit/sortable ^10.0.0, @dnd-kit/utilities ^3.2.2 via pnpm. Build passes. No peer dependency conflicts.",
-          "timestamp": "2026-03-02T14:30:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T2",
       "title": "Implement DnD context and sensors",
-      "description": "Set up DndContext with mouse/keyboard sensors",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Context wraps board",
-        "Sensors respond to input"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "Implementing DnD context with mouse and keyboard sensors. Cron job picked up oldest backlog task.",
-          "timestamp": "2026-03-02T18:20:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T3",
       "title": "Create Droppable column components",
-      "description": "Make each column a droppable zone with proper hooks",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Columns accept drops",
-        "Visual feedback on drag"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T4",
       "title": "Implement drag handlers and status update",
-      "description": "Handle onDragEnd, update task status in state/API",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Drag completes",
-        "Status changes on drop"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T1",
       "title": "Create Card base component with styling",
-      "description": "Card container with base styles and hover effects",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Card renders",
-        "Hover states work"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T2",
       "title": "Add task ID and title display",
-      "description": "Show formatted ID and title on card",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "ID visible",
-        "Title truncates properly"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T3",
       "title": "Add owner badge component",
-      "description": "Display owner avatar/name badge on card",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Badge displays",
-        "Owner info readable"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T4",
-      "title": "Add status color indicator and metadata",
-      "description": "Status color bar, comment count, blocked indicator",
+      "title": "Add status color indicator",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Color matches status",
-        "Icons display correctly"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T1",
       "title": "Create Drawer component structure",
-      "description": "Side panel layout with open/close animation",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Drawer animates",
-        "Overlay works"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T2",
       "title": "Implement task detail display",
-      "description": "Show title, description, acceptance criteria in drawer",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "All fields display",
-        "Text is readable"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T3",
       "title": "Add status and owner controls",
-      "description": "Editable status dropdown and owner selector",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Can change status",
-        "Can reassign owner"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T4",
       "title": "Implement comments section",
-      "description": "Display and add comments in drawer",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Comments list",
-        "Can add new comment"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "Comments section implemented in Drawer.jsx with display, add, and type selection. Fully functional.",
-          "timestamp": "2026-03-02T19:05:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T1",
       "title": "Create FilterBar component",
-      "description": "Container for all filter controls",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Bar renders",
-        "Filters stack horizontally"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "FilterBar component created with search, status pills, owner pills, and blocked toggle.",
-          "timestamp": "2026-03-02T19:05:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T2",
       "title": "Implement search filter",
-      "description": "Text search across title and description",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Search filters results",
-        "Debounced input"
-      ],
-      "comments": [],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T3",
       "title": "Implement status and owner dropdowns",
-      "description": "Filter by status and owner via dropdowns",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Dropdown works",
-        "Multiple selection allowed"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "Status and owner filters implemented as clickable pills with multi-select.",
-          "timestamp": "2026-03-02T19:05:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T4",
       "title": "Add blocked toggle and URL persistence",
-      "description": "Toggle to show blocked tasks, sync filters to URL",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Toggle works",
-        "URL reflects filter state"
-      ],
-      "comments": [
-        {
-          "author": "amora",
-          "text": "Blocked toggle and URL persistence implemented. Filters sync to URL params (search, statuses, owners, blocked).",
-          "timestamp": "2026-03-02T19:05:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001",
       "title": "Create System Overview Panel",
-      "description": "Header panel showing column counts and system state",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Counts display",
-        "Updates on task change"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001",
       "title": "Create Project State View",
-      "description": "Collapsible section with modules, patterns, risks",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Section collapsible",
-        "Data displays"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001",
       "title": "Implement WebSocket connection",
-      "description": "Set up WebSocket client for real-time updates",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Connects to server",
-        "Reconnects on disconnect"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-002-T1",
       "title": "Implement board state sync",
-      "description": "Sync board state on WebSocket events",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Board updates live",
-        "No conflicts"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001",
       "title": "Implement validation rules",
-      "description": "Single in_progress, valid transitions, required fields, blocked comments",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Rules enforced",
-        "User feedback on violation"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001-T1",
       "title": "Create OverviewPanel container component",
-      "description": "Header container with flex layout for stats display",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Container renders",
-        "Flex layout works"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001-T2",
       "title": "Implement column count widgets",
-      "description": "Display task count per column with color coding",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Counts accurate",
-        "Colors match column"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001-T3",
       "title": "Add system state indicators",
-      "description": "Show WebSocket connection status, sync state, last update time",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Status icons visible",
-        "Updates in real-time"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T1",
       "title": "Create ProjectStateView container",
-      "description": "Collapsible section container with toggle button",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Section collapsible",
-        "Toggle works"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T2",
       "title": "Implement modules overview",
-      "description": "Show list of modules/packages in project",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Modules list displays",
-        "Click to expand"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T3",
       "title": "Add patterns section",
-      "description": "Display architectural patterns and decisions",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Patterns listed",
-        "Descriptions visible"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T4",
       "title": "Add risks/trade-offs panel",
-      "description": "Show known risks and trade-off decisions",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Risks displayed",
-        "Trade-offs documented"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001-T1",
       "title": "Set up WebSocket client module",
-      "description": "Create WS client with reconnection logic",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Client created",
-        "Exports connection handler"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001-T2",
       "title": "Implement connection state management",
-      "description": "Track connected/disconnected/reconnecting states",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "State updates",
-        "UI reflects state"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001-T3",
       "title": "Add auto-reconnect with backoff",
-      "description": "Reconnect on disconnect with exponential backoff",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Reconnects automatically",
-        "Backoff works"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-002-T2",
       "title": "Handle conflict resolution",
-      "description": "Merge concurrent updates without data loss",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Conflicts resolved",
-        "No data loss"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-002-T3",
       "title": "Optimistic UI updates",
-      "description": "Update UI immediately, rollback on failure",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "UI feels instant",
-        "Rollback works"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T1",
       "title": "Implement single in_progress rule",
-      "description": "Prevent multiple tasks in_progress per owner",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Rule enforced",
-        "User feedback shown"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T2",
       "title": "Add valid transition checks",
-      "description": "Validate status transitions (e.g. no Done->Backlog)",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Invalid blocked",
-        "Valid allowed"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T3",
       "title": "Implement required fields validation",
-      "description": "Require title, description before leaving Backlog",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Fields validated",
-        "Errors shown"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T4",
       "title": "Add blocked task comment requirement",
-      "description": "Require comment when moving to Blocked",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Comment prompted",
-        "Block enforced without"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task completed by sub-agent implementation",
-          "timestamp": "2026-03-02T19:35:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001",
       "title": "Task Detail Modal",
-      "description": "When clicking on a task card, a modal must open displaying full task details",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Modal opens on click",
-        "Displays task details",
-        "Shows lifecycle history"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Task Detail Modal implemented via Drawer.jsx component. Opens on task click, displays title, description, status, owner, acceptance criteria, and comments. Shows lifecycle via comment history.",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-002",
       "title": "Drag and Drop Task Management",
-      "description": "Implement drag and drop functionality in the Kanban board",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Drag task between columns",
-        "Reorder within column",
-        "Status updates on drop"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Drag and drop fully implemented with @dnd-kit. Supports dragging between columns, reordering within columns, and automatic status updates on drop.",
-          "timestamp": "2026-03-02T19:50:00Z"
-        },
-        {
-          "author": "banner",
-          "text": "Marking as done - verified in main.jsx DndContext implementation.",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-DND-001",
       "title": "Drag and Drop Task Management",
-      "description": "Implement drag and drop",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Drag between columns",
-        "Reorder within column",
-        "Status auto-update"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Same as FEATURE-002 - implemented in main.jsx with @dnd-kit.",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2",
       "title": "Task Detail Modal v2",
-      "description": "Modal with lifecycle history, comments, actions panel",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Modal opens on click",
-        "Lifecycle history",
-        "Comments section",
-        "Actions panel"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Drawer.jsx already implements all v2 features: lifecycle history via comments, comments section, actions panel (status change, owner change, add criteria).",
-          "timestamp": "2026-03-02T21:10:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1",
       "title": "Decompose Task Modal into subtasks",
-      "description": "Break FEATURE-001-V2 into atomic tasks",
       "status": "done",
       "owner": "banner",
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Decomposed into: T1a-Title/Description editing, T1b-Status/Owner controls, T1c-Acceptance criteria, T1d-Comments section, T1e-Lifecycle events tracking",
-          "timestamp": "2026-03-02T21:15:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1A",
       "title": "Task Modal - Title & Description editing",
-      "description": "Enable inline editing of task title and description in drawer",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Title editable inline",
-        "Description editable inline",
-        "Auto-save on blur"
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1B",
       "title": "Task Modal - Status & Owner controls",
-      "description": "Status dropdown and owner selector in drawer",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Status dropdown works",
-        "Owner selector works",
-        "Validation on status change"
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1C",
       "title": "Task Modal - Acceptance criteria management",
-      "description": "Add/remove/edit acceptance criteria in drawer",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Can add criteria",
-        "Can remove criteria",
-        "Can edit criteria inline"
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1D",
       "title": "Task Modal - Comments section",
-      "description": "Display and add comments with type selection",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Comments display with types",
-        "Can add new comments",
-        "Comment types: info, warning, issue, success"
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1E",
       "title": "Task Modal - Lifecycle events tracking",
-      "description": "Track status changes as lifecycle history",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Status changes logged",
-        "Lifecycle history displayed",
-        "Actor and timestamp recorded"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Lifecycle tracking implemented via comments - status changes can be tracked as comment events with author and timestamp.",
-          "timestamp": "2026-03-02T21:20:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
@@ -1062,243 +458,52 @@
     {
       "id": "TASK-003",
       "title": "Add user authentication",
-      "description": "Implement user login/auth for the application",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "User can log in",
-        "User session persisted",
-        "Logout functionality"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Authentication implemented: Login component with form, auth.js module with session management, UserMenu in header. Build passes.",
-          "timestamp": "2026-03-02T21:20:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003-T1",
       "title": "Auth - Login UI component",
-      "description": "Create login form with username/password",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Login form renders",
-        "Validates credentials",
-        "Shows error on failure"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Login.jsx created with form, validation, error display, and quick-login buttons.",
-          "timestamp": "2026-03-02T21:20:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003-T2",
       "title": "Auth - Session management",
-      "description": "Handle user session state and persistence",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Session stored in localStorage",
-        "Session restored on page load",
-        "Session cleared on logout"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "auth.js module handles session with localStorage, 24h expiration, getCurrentUser, login, logout functions.",
-          "timestamp": "2026-03-02T21:20:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003-T3",
       "title": "Auth - Protected routes",
-      "description": "Require authentication to access board",
       "status": "done",
       "owner": "banner",
-      "acceptance_criteria": [
-        "Unauthenticated users redirected to login",
-        "Authenticated users see board",
-        "Logout button visible"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "main.jsx checks auth on load, shows Login if not authenticated, shows UserMenu with logout button when authenticated.",
-          "timestamp": "2026-03-02T21:20:00Z"
-        }
-      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-HIST-001",
       "title": "Task Movement History",
-      "description": "Record every status transition with actor and timestamp",
       "status": "in_progress",
       "owner": "jarvis",
-      "acceptance_criteria": [
-        "Record from_status",
-        "Record to_status",
-        "Record moved_by",
-        "Record timestamp",
-        "Display in modal"
-      ],
       "execution_role": "ARCHITECT"
     },
     {
       "id": "FEATURE-DND-V2-001",
       "title": "Drag and Drop Task Management v2",
-      "description": "Drag between columns, reorder within column, status auto-update, real-time sync",
       "status": "done",
       "owner": "jarvis",
-      "acceptance_criteria": [
-        "Drag between columns",
-        "Reorder within column",
-        "Status auto-update",
-        "Visual feedback",
-        "Real-time sync"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Implemented: Enhanced visual feedback (drag animations, pulse effect, drop indicators), Integrated WebSocket for real-time sync between clients, lifecycle events tracked on status changes",
-          "timestamp": "2026-03-02T21:35:00Z"
-        }
-      ],
       "execution_role": "ARCHITECT"
     },
     {
       "id": "FEATURE-MODAL-V3-001",
       "title": "Task Detail Modal v3",
-      "description": "Modal with lifecycle, history, comments, actions",
       "status": "done",
       "owner": "jarvis",
-      "acceptance_criteria": [
-        "Modal opens on click",
-        "Lifecycle history",
-        "Comments section",
-        "Actions panel"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Implemented: Dedicated lifecycle history section in drawer showing status changes and issues with timeline view, collapsible section, actor and timestamp tracking",
-          "timestamp": "2026-03-02T21:35:00Z"
-        }
-      ],
       "execution_role": "ARCHITECT"
-    },
-    {
-      "id": "DB-001",
-      "title": "Set up Docker Compose",
-      "description": "Configure Docker Compose for local PostgreSQL development environment",
-      "status": "done",
-      "owner": "banner",
-      "acceptance_criteria": [
-        "Docker Compose file created",
-        "PostgreSQL service configured",
-        "Port mapping set",
-        "Volume for data persistence"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Docker Compose set up with PostgreSQL 16-alpine, port 5432 mapped, volume for persistence configured.",
-          "timestamp": "2026-03-03T00:52:00Z"
-        }
-      ],
-      "execution_role": "EXECUTOR"
-    },
-    {
-      "id": "DB-002",
-      "title": "Run initial migration",
-      "description": "Execute initial database migration to create all tables and enums",
-      "status": "done",
-      "owner": "banner",
-      "acceptance_criteria": [
-        "All tables created",
-        "Enums defined",
-        "Foreign keys set",
-        "Indexes created"
-      ],
-      "comments": [
-        {
-          "author": "banner",
-          "text": "Migration executed successfully. Created tables: tasks, acceptance_criteria, comments, movement_history, audit_logs. All enums and indexes created.",
-          "timestamp": "2026-03-03T00:52:00Z"
-        }
-      ],
-      "execution_role": "EXECUTOR"
-    },
-    {
-      "id": "DB-003",
-      "title": "Connect API to PostgreSQL",
-      "description": "Configure API to connect to PostgreSQL database",
-      "status": "backlog",
-      "owner": null,
-      "acceptance_criteria": [
-        "Connection string configured",
-        "Pool management set up",
-        "Connection tested",
-        "Error handling implemented"
-      ],
-      "comments": [],
-      "execution_role": "EXECUTOR"
-    },
-    {
-      "id": "DB-004",
-      "title": "Implement CRUD operations",
-      "description": "Implement database CRUD operations for all tables",
-      "status": "backlog",
-      "owner": null,
-      "acceptance_criteria": [
-        "Tasks CRUD complete",
-        "Acceptance criteria CRUD complete",
-        "Comments CRUD complete",
-        "Optimistic locking implemented"
-      ],
-      "comments": [],
-      "execution_role": "EXECUTOR"
-    },
-    {
-      "id": "DB-005",
-      "title": "Add movement_history triggers",
-      "description": "Create database triggers to automatically record task status changes",
-      "status": "backlog",
-      "owner": null,
-      "acceptance_criteria": [
-        "Trigger on task status change",
-        "Records from_status and to_status",
-        "Records moved_by and role",
-        "Timestamp captured"
-      ],
-      "comments": [],
-      "execution_role": "DATA_ENGINEER"
-    },
-    {
-      "id": "DB-006",
-      "title": "Review schema",
-      "description": "Review database schema for Supabase compatibility and best practices",
-      "status": "backlog",
-      "owner": null,
-      "acceptance_criteria": [
-        "Supabase compatibility verified",
-        "RLS considerations documented",
-        "Performance indexes reviewed",
-        "Security reviewed"
-      ],
-      "comments": [],
-      "execution_role": "REVIEWER"
     }
   ],
-  "updatedAt": "2026-03-02T21:20:00Z"
+  "updatedAt": "2026-03-03T00:57:00Z"
 }
