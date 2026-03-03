@@ -503,6 +503,85 @@
       "status": "done",
       "owner": "jarvis",
       "execution_role": "ARCHITECT"
+    },
+    {
+      "id": "DB-001",
+      "title": "Set up Docker Compose",
+      "status": "backlog",
+      "owner": "jarvis",
+      "execution_role": "EXECUTOR",
+      "acceptance_criteria": [
+        "PostgreSQL container runs successfully",
+        "Port 5432 is accessible",
+        "Database mission_control is created",
+        "Environment variables configured for connection"
+      ]
+    },
+    {
+      "id": "DB-002",
+      "title": "Run initial migration",
+      "status": "backlog",
+      "owner": "jarvis",
+      "execution_role": "EXECUTOR",
+      "acceptance_criteria": [
+        "001_initial_schema.sql executes without errors",
+        "All tables created (tasks, acceptance_criteria, comments, movement_history, audit_logs)",
+        "Enums created (task_status, execution_role, comment_type)",
+        "Indexes created for performance",
+        "Immutable table rules enforced"
+      ]
+    },
+    {
+      "id": "DB-003",
+      "title": "Connect API to PostgreSQL",
+      "status": "backlog",
+      "owner": "jarvis",
+      "execution_role": "EXECUTOR",
+      "acceptance_criteria": [
+        "API can connect to PostgreSQL container",
+        "Connection string uses environment variables",
+        "Health check endpoint verifies database connectivity",
+        "Supabase client initialization ready"
+      ]
+    },
+    {
+      "id": "DB-004",
+      "title": "Implement CRUD operations",
+      "status": "backlog",
+      "owner": "jarvis",
+      "execution_role": "EXECUTOR",
+      "acceptance_criteria": [
+        "Tasks: create, read, update, delete",
+        "Acceptance criteria: create, read, update, delete per task",
+        "Comments: create, read for tasks",
+        "Movement history: auto-recorded on status change",
+        "Audit logs: auto-recorded on entity changes"
+      ]
+    },
+    {
+      "id": "DB-005",
+      "title": "Add movement_history triggers",
+      "status": "backlog",
+      "owner": "jarvis",
+      "execution_role": "DATA_ENGINEER",
+      "acceptance_criteria": [
+        "Trigger fires on task status change",
+        "Records from_status, to_status, moved_by, moved_by_role",
+        "Append-only enforced (no update/delete)"
+      ]
+    },
+    {
+      "id": "DB-006",
+      "title": "Review schema",
+      "status": "backlog",
+      "owner": "jarvis",
+      "execution_role": "REVIEWER",
+      "acceptance_criteria": [
+        "Schema verified against PRD requirements",
+        "Indexes cover common queries",
+        "Supabase migration path validated",
+        "Security best practices applied"
+      ]
     }
   ],
   "updatedAt": "2026-03-03T00:57:00Z"
