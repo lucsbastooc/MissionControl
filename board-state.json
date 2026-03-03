@@ -8,6 +8,42 @@
   ],
   "cards": [
     {
+      "id": "EPIC-1-001-T1",
+      "title": "Create monorepo root structure",
+      "description": "Create root package.json with pnpm workspaces, set up /apps /web /api /shared-types directories",
+      "status": "backlog",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "package.json has workspaces config",
+        "Directories created"
+      ],
+      "parent": "EPIC-1-001"
+    },
+    {
+      "id": "EPIC-1-001-T2",
+      "title": "Configure TypeScript for monorepo",
+      "description": "Set up root tsconfig.json and package-specific tsconfigs",
+      "status": "backlog",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "Root tsconfig extends base",
+        "Packages have own tsconfigs"
+      ],
+      "parent": "EPIC-1-001"
+    },
+    {
+      "id": "EPIC-1-001-T3",
+      "title": "Set up build scripts and workspace dependencies",
+      "description": "Configure shared dependencies, scripts for building all packages",
+      "status": "backlog",
+      "owner": "banner",
+      "acceptance_criteria": [
+        "pnpm install works at root",
+        "Build script runs all packages"
+      ],
+      "parent": "EPIC-1-001"
+    },
+    {
       "id": "EPIC-1-001",
       "title": "Initialize monorepo with pnpm workspaces",
       "description": "Set up monorepo structure with /apps /web /api /shared-types",
@@ -17,7 +53,8 @@
         "Monorepo created",
         "Workspaces configured"
       ],
-      "comments": []
+      "comments": [],
+      "parent": null
     },
     {
       "id": "EPIC-1-002-T1",
@@ -1038,7 +1075,7 @@
       "id": "FEATURE-HIST-001",
       "title": "Task Movement History",
       "description": "Record every status transition with actor and timestamp",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Record from_status",
@@ -1049,10 +1086,7 @@
       ]
     },
     {
-      "id": "FEATURE-DND-V2-001",
-      "title": "Drag and Drop Task Management v2",
-      "description": "Drag between columns, reorder within column, status auto-update, real-time sync",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Drag between columns",
@@ -1063,10 +1097,7 @@
       ]
     },
     {
-      "id": "FEATURE-MODAL-V3-001",
-      "title": "Task Detail Modal v3",
-      "description": "Modal with lifecycle, history, comments, actions",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Modal opens on click",
