@@ -17,7 +17,8 @@
         "package.json has workspaces config",
         "Directories created"
       ],
-      "parent": "EPIC-1-001"
+      "parent": "EPIC-1-001",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-001-T2",
@@ -29,7 +30,8 @@
         "Root tsconfig extends base",
         "Packages have own tsconfigs"
       ],
-      "parent": "EPIC-1-001"
+      "parent": "EPIC-1-001",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-001-T3",
@@ -41,7 +43,8 @@
         "pnpm install works at root",
         "Build script runs all packages"
       ],
-      "parent": "EPIC-1-001"
+      "parent": "EPIC-1-001",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-001",
@@ -54,7 +57,8 @@
         "Workspaces configured"
       ],
       "comments": [],
-      "parent": null
+      "parent": null,
+      "execution_role": "ARCHITECT"
     },
     {
       "id": "EPIC-1-002-T1",
@@ -72,7 +76,8 @@
           "text": "Created shared-types package with package.json, tsconfig.json, and index.ts exports. Includes Task, Comment, TaskStatus, Board, User, LifecycleEvent, Subtask types.",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-002-T2",
@@ -90,7 +95,8 @@
           "text": "All TypeScript interfaces defined: Task, Comment, TaskStatus, Board, User, TaskFilters, ConnectionState, ValidationResult, LifecycleEvent, Subtask, and VALID_TRANSITIONS.",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-002-T3",
@@ -108,7 +114,8 @@
           "text": "All types exported from index.ts. Package.json configured with proper exports field.",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-1-002",
@@ -121,7 +128,8 @@
         "Exported"
       ],
       "comments": [],
-      "parent": "EPIC-1-002-T1"
+      "parent": "EPIC-1-002-T1",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T1",
@@ -133,7 +141,8 @@
         "Board renders full width/height",
         "Flex layout enables horizontal scroll on overflow"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T2",
@@ -145,7 +154,8 @@
         "Config defines Backlog, In Progress, Review, Done, Blocked",
         "Colors and labels match spec"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T3",
@@ -163,7 +173,8 @@
           "text": "Validated: Header with title/count implemented in JSX. Added styles.css with .column-content { overflow-y: auto } for independent scrolling. Build passes.",
           "timestamp": "2026-03-02T14:21:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T4",
@@ -175,7 +186,8 @@
         "Tasks appear in correct column based on status",
         "New tasks appear in real-time"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T5",
@@ -187,7 +199,8 @@
         "Empty columns show placeholder text",
         "Placeholder is visually subtle"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001-T6",
@@ -199,7 +212,8 @@
         "Each column has distinct header color",
         "Backgrounds and borders match design"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-001",
@@ -212,7 +226,8 @@
         "Tasks render in columns"
       ],
       "comments": [],
-      "parent": "EPIC-2-001-T1"
+      "parent": "EPIC-2-001-T1",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T1",
@@ -230,7 +245,8 @@
           "text": "Installed @dnd-kit/core ^6.3.1, @dnd-kit/sortable ^10.0.0, @dnd-kit/utilities ^3.2.2 via pnpm. Build passes. No peer dependency conflicts.",
           "timestamp": "2026-03-02T14:30:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T2",
@@ -248,7 +264,8 @@
           "text": "Implementing DnD context with mouse and keyboard sensors. Cron job picked up oldest backlog task.",
           "timestamp": "2026-03-02T18:20:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T3",
@@ -260,7 +277,8 @@
         "Columns accept drops",
         "Visual feedback on drag"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-2-002-T4",
@@ -272,7 +290,8 @@
         "Drag completes",
         "Status changes on drop"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T1",
@@ -284,7 +303,8 @@
         "Card renders",
         "Hover states work"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T2",
@@ -296,7 +316,8 @@
         "ID visible",
         "Title truncates properly"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T3",
@@ -308,7 +329,8 @@
         "Badge displays",
         "Owner info readable"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-3-001-T4",
@@ -320,7 +342,8 @@
         "Color matches status",
         "Icons display correctly"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T1",
@@ -332,7 +355,8 @@
         "Drawer animates",
         "Overlay works"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T2",
@@ -344,7 +368,8 @@
         "All fields display",
         "Text is readable"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T3",
@@ -356,7 +381,8 @@
         "Can change status",
         "Can reassign owner"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-4-001-T4",
@@ -374,7 +400,8 @@
           "text": "Comments section implemented in Drawer.jsx with display, add, and type selection. Fully functional.",
           "timestamp": "2026-03-02T19:05:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T1",
@@ -392,7 +419,8 @@
           "text": "FilterBar component created with search, status pills, owner pills, and blocked toggle.",
           "timestamp": "2026-03-02T19:05:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T2",
@@ -404,7 +432,8 @@
         "Search filters results",
         "Debounced input"
       ],
-      "comments": []
+      "comments": [],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T3",
@@ -422,7 +451,8 @@
           "text": "Status and owner filters implemented as clickable pills with multi-select.",
           "timestamp": "2026-03-02T19:05:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-5-001-T4",
@@ -440,7 +470,8 @@
           "text": "Blocked toggle and URL persistence implemented. Filters sync to URL params (search, statuses, owners, blocked).",
           "timestamp": "2026-03-02T19:05:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001",
@@ -458,7 +489,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001",
@@ -476,7 +508,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001",
@@ -494,7 +527,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-002-T1",
@@ -512,7 +546,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001",
@@ -530,7 +565,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001-T1",
@@ -548,7 +584,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001-T2",
@@ -566,7 +603,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-6-001-T3",
@@ -584,7 +622,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T1",
@@ -602,7 +641,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T2",
@@ -620,7 +660,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T3",
@@ -638,7 +679,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-7-001-T4",
@@ -656,7 +698,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001-T1",
@@ -674,7 +717,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001-T2",
@@ -692,7 +736,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-001-T3",
@@ -710,7 +755,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-002-T2",
@@ -728,7 +774,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-8-002-T3",
@@ -746,7 +793,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T1",
@@ -764,7 +812,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T2",
@@ -782,7 +831,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T3",
@@ -800,7 +850,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "EPIC-9-001-T4",
@@ -818,7 +869,8 @@
           "text": "Task completed by sub-agent implementation",
           "timestamp": "2026-03-02T19:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001",
@@ -837,7 +889,8 @@
           "text": "Task Detail Modal implemented via Drawer.jsx component. Opens on task click, displays title, description, status, owner, acceptance criteria, and comments. Shows lifecycle via comment history.",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-002",
@@ -861,7 +914,8 @@
           "text": "Marking as done - verified in main.jsx DndContext implementation.",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-DND-001",
@@ -880,7 +934,8 @@
           "text": "Same as FEATURE-002 - implemented in main.jsx with @dnd-kit.",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2",
@@ -900,7 +955,8 @@
           "text": "Drawer.jsx already implements all v2 features: lifecycle history via comments, comments section, actions panel (status change, owner change, add criteria).",
           "timestamp": "2026-03-02T21:10:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1",
@@ -914,7 +970,8 @@
           "text": "Decomposed into: T1a-Title/Description editing, T1b-Status/Owner controls, T1c-Acceptance criteria, T1d-Comments section, T1e-Lifecycle events tracking",
           "timestamp": "2026-03-02T21:15:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1A",
@@ -926,7 +983,8 @@
         "Title editable inline",
         "Description editable inline",
         "Auto-save on blur"
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1B",
@@ -938,7 +996,8 @@
         "Status dropdown works",
         "Owner selector works",
         "Validation on status change"
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1C",
@@ -950,7 +1009,8 @@
         "Can add criteria",
         "Can remove criteria",
         "Can edit criteria inline"
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1D",
@@ -962,7 +1022,8 @@
         "Comments display with types",
         "Can add new comments",
         "Comment types: info, warning, issue, success"
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-001-V2-T1E",
@@ -981,19 +1042,22 @@
           "text": "Lifecycle tracking implemented via comments - status changes can be tracked as comment events with author and timestamp.",
           "timestamp": "2026-03-02T21:20:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-001",
       "title": "Add new feature: Real-time sync",
       "status": "done",
-      "owner": "banner"
+      "owner": "banner",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-002",
       "title": "Implement WebSocket support",
       "status": "done",
-      "owner": "banner"
+      "owner": "banner",
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003",
@@ -1012,7 +1076,8 @@
           "text": "Authentication implemented: Login component with form, auth.js module with session management, UserMenu in header. Build passes.",
           "timestamp": "2026-03-02T21:20:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003-T1",
@@ -1031,7 +1096,8 @@
           "text": "Login.jsx created with form, validation, error display, and quick-login buttons.",
           "timestamp": "2026-03-02T21:20:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003-T2",
@@ -1050,7 +1116,8 @@
           "text": "auth.js module handles session with localStorage, 24h expiration, getCurrentUser, login, logout functions.",
           "timestamp": "2026-03-02T21:20:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "TASK-003-T3",
@@ -1069,7 +1136,8 @@
           "text": "main.jsx checks auth on load, shows Login if not authenticated, shows UserMenu with logout button when authenticated.",
           "timestamp": "2026-03-02T21:20:00Z"
         }
-      ]
+      ],
+      "execution_role": "EXECUTOR"
     },
     {
       "id": "FEATURE-HIST-001",
@@ -1083,7 +1151,8 @@
         "Record moved_by",
         "Record timestamp",
         "Display in modal"
-      ]
+      ],
+      "execution_role": "ARCHITECT"
     },
     {
       "id": "FEATURE-DND-V2-001",
@@ -1104,7 +1173,8 @@
           "text": "Implemented: Enhanced visual feedback (drag animations, pulse effect, drop indicators), Integrated WebSocket for real-time sync between clients, lifecycle events tracked on status changes",
           "timestamp": "2026-03-02T21:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "ARCHITECT"
     },
     {
       "id": "FEATURE-MODAL-V3-001",
@@ -1124,7 +1194,8 @@
           "text": "Implemented: Dedicated lifecycle history section in drawer showing status changes and issues with timeline view, collapsible section, actor and timestamp tracking",
           "timestamp": "2026-03-02T21:35:00Z"
         }
-      ]
+      ],
+      "execution_role": "ARCHITECT"
     }
   ],
   "updatedAt": "2026-03-02T21:20:00Z"
