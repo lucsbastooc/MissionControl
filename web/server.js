@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   const pathname = parsedUrl.pathname;
   
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
@@ -22,16 +22,36 @@ const server = http.createServer((req, res) => {
 
   if (pathname === '/board-state.json') {
     const filePath = path.join(BOARD_DIR, 'board-state.json');
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        res.writeHead(404, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Not found' }));
-        return;
-      }
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(data);
-    });
-    return;
+    
+    if (req.method === 'GET') {
+      fs.readFile(filePath, (err, data) => {
+        if (err) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Not found' }));
+          return;
+        }
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(data);
+      });
+      return;
+    }
+    
+    if (req.method === 'PUT') {
+      let body = '';
+      req.on('data', chunk => body += chunk);
+      req.on('end', () => {
+        fs.writeFile(filePath, body, 'utf8', (err) => {
+          if (err) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: err.message }));
+            return;
+          }
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true }));
+        });
+      });
+      return;
+    }
   }
 
   let filePath = path.join(__dirname, pathname === '/' ? 'index.html' : pathname);
