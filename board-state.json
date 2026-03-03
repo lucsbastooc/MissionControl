@@ -1196,6 +1196,96 @@
         }
       ],
       "execution_role": "ARCHITECT"
+    },
+    {
+      "id": "DB-001",
+      "title": "Set up Docker Compose",
+      "description": "Configure Docker Compose for local PostgreSQL development environment",
+      "status": "backlog",
+      "owner": null,
+      "acceptance_criteria": [
+        "Docker Compose file created",
+        "PostgreSQL service configured",
+        "Port mapping set",
+        "Volume for data persistence"
+      ],
+      "comments": [],
+      "execution_role": "EXECUTOR"
+    },
+    {
+      "id": "DB-002",
+      "title": "Run initial migration",
+      "description": "Execute initial database migration to create all tables and enums",
+      "status": "backlog",
+      "owner": null,
+      "acceptance_criteria": [
+        "All tables created",
+        "Enums defined",
+        "Foreign keys set",
+        "Indexes created"
+      ],
+      "comments": [],
+      "execution_role": "EXECUTOR"
+    },
+    {
+      "id": "DB-003",
+      "title": "Connect API to PostgreSQL",
+      "description": "Configure API to connect to PostgreSQL database",
+      "status": "backlog",
+      "owner": null,
+      "acceptance_criteria": [
+        "Connection string configured",
+        "Pool management set up",
+        "Connection tested",
+        "Error handling implemented"
+      ],
+      "comments": [],
+      "execution_role": "EXECUTOR"
+    },
+    {
+      "id": "DB-004",
+      "title": "Implement CRUD operations",
+      "description": "Implement database CRUD operations for all tables",
+      "status": "backlog",
+      "owner": null,
+      "acceptance_criteria": [
+        "Tasks CRUD complete",
+        "Acceptance criteria CRUD complete",
+        "Comments CRUD complete",
+        "Optimistic locking implemented"
+      ],
+      "comments": [],
+      "execution_role": "EXECUTOR"
+    },
+    {
+      "id": "DB-005",
+      "title": "Add movement_history triggers",
+      "description": "Create database triggers to automatically record task status changes",
+      "status": "backlog",
+      "owner": null,
+      "acceptance_criteria": [
+        "Trigger on task status change",
+        "Records from_status and to_status",
+        "Records moved_by and role",
+        "Timestamp captured"
+      ],
+      "comments": [],
+      "execution_role": "DATA_ENGINEER"
+    },
+    {
+      "id": "DB-006",
+      "title": "Review schema",
+      "description": "Review database schema for Supabase compatibility and best practices",
+      "status": "backlog",
+      "owner": null,
+      "acceptance_criteria": [
+        "Supabase compatibility verified",
+        "RLS considerations documented",
+        "Performance indexes reviewed",
+        "Security reviewed"
+      ],
+      "comments": [],
+      "execution_role": "REVIEWER"
     }
   ],
   "updatedAt": "2026-03-02T21:20:00Z"
