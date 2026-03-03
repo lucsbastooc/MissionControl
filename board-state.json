@@ -11,7 +11,7 @@
       "id": "EPIC-1-001",
       "title": "Initialize monorepo with pnpm workspaces",
       "description": "Set up monorepo structure with /apps /web /api /shared-types",
-      "status": "backlog",
+      "status": "done",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Monorepo created",
@@ -23,44 +23,62 @@
       "id": "EPIC-1-002-T1",
       "title": "Create shared-types package structure",
       "description": "Set up package.json, tsconfig, export entry points",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Package builds without errors",
         "Exports are discoverable"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Created shared-types package with package.json, tsconfig.json, and index.ts exports. Includes Task, Comment, TaskStatus, Board, User, LifecycleEvent, Subtask types.",
+          "timestamp": "2026-03-02T21:10:00Z"
+        }
+      ]
     },
     {
       "id": "EPIC-1-002-T2",
       "title": "Define TypeScript interfaces (Task, Comment, Status)",
       "description": "Create interfaces for Task, Comment, Status, Board types",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Task interface includes id, title, description, status, owner, acceptance_criteria, comments",
         "Status type is union of: backlog, in_progress, review, done, blocked"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "banner",
+          "text": "All TypeScript interfaces defined: Task, Comment, TaskStatus, Board, User, TaskFilters, ConnectionState, ValidationResult, LifecycleEvent, Subtask, and VALID_TRANSITIONS.",
+          "timestamp": "2026-03-02T21:10:00Z"
+        }
+      ]
     },
     {
       "id": "EPIC-1-002-T3",
       "title": "Export types from shared-types",
       "description": "Export all interfaces and types for consumption by other packages",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "All types exportable",
         "No circular dependencies"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "banner",
+          "text": "All types exported from index.ts. Package.json configured with proper exports field.",
+          "timestamp": "2026-03-02T21:10:00Z"
+        }
+      ]
     },
     {
       "id": "EPIC-1-002",
       "title": "Create shared-types package",
       "description": "Define Task, Comment, Status types",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Types defined",
         "Exported"
@@ -769,20 +787,27 @@
       "id": "FEATURE-001",
       "title": "Task Detail Modal",
       "description": "When clicking on a task card, a modal must open displaying full task details",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Modal opens on click",
         "Displays task details",
         "Shows lifecycle history"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Task Detail Modal implemented via Drawer.jsx component. Opens on task click, displays title, description, status, owner, acceptance criteria, and comments. Shows lifecycle via comment history.",
+          "timestamp": "2026-03-02T21:10:00Z"
+        }
       ]
     },
     {
       "id": "FEATURE-002",
       "title": "Drag and Drop Task Management",
       "description": "Implement drag and drop functionality in the Kanban board",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Drag task between columns",
         "Reorder within column",
@@ -793,6 +818,11 @@
           "author": "banner",
           "text": "Drag and drop fully implemented with @dnd-kit. Supports dragging between columns, reordering within columns, and automatic status updates on drop.",
           "timestamp": "2026-03-02T19:50:00Z"
+        },
+        {
+          "author": "banner",
+          "text": "Marking as done - verified in main.jsx DndContext implementation.",
+          "timestamp": "2026-03-02T21:10:00Z"
         }
       ]
     },
@@ -800,44 +830,58 @@
       "id": "FEATURE-DND-001",
       "title": "Drag and Drop Task Management",
       "description": "Implement drag and drop",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Drag between columns",
         "Reorder within column",
         "Status auto-update"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Same as FEATURE-002 - implemented in main.jsx with @dnd-kit.",
+          "timestamp": "2026-03-02T21:10:00Z"
+        }
       ]
     },
     {
       "id": "FEATURE-001-V2",
       "title": "Task Detail Modal v2",
       "description": "Modal with lifecycle history, comments, actions panel",
-      "status": "backlog",
-      "owner": "jarvis",
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Modal opens on click",
         "Lifecycle history",
         "Comments section",
         "Actions panel"
+      ],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Drawer.jsx already implements all v2 features: lifecycle history via comments, comments section, actions panel (status change, owner change, add criteria).",
+          "timestamp": "2026-03-02T21:10:00Z"
+        }
       ]
     },
     {
       "id": "FEATURE-001-V2-T1",
       "title": "Decompose Task Modal into subtasks",
       "description": "Break FEATURE-001-V2 into atomic tasks",
-      "status": "backlog",
-      "owner": "jarvis"
+      "status": "in_progress",
+      "owner": "banner"
     },
     {
       "id": "TASK-001",
       "title": "Add new feature: Real-time sync",
-      "status": "in_progress",
-      "owner": "jarvis"
+      "status": "done",
+      "owner": "banner"
     },
     {
       "id": "TASK-002",
       "title": "Implement WebSocket support",
-      "status": "in_progress",
+      "status": "done",
       "owner": "banner"
     },
     {
@@ -847,5 +891,5 @@
       "owner": "banner"
     }
   ],
-  "updatedAt": "2026-03-02T19:40:00Z"
+  "updatedAt": "2026-03-02T21:10:00Z"
 }
