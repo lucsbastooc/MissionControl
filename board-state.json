@@ -1201,30 +1201,42 @@
       "id": "DB-001",
       "title": "Set up Docker Compose",
       "description": "Configure Docker Compose for local PostgreSQL development environment",
-      "status": "backlog",
-      "owner": null,
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "Docker Compose file created",
         "PostgreSQL service configured",
         "Port mapping set",
         "Volume for data persistence"
       ],
-      "comments": [],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Docker Compose set up with PostgreSQL 16-alpine, port 5432 mapped, volume for persistence configured.",
+          "timestamp": "2026-03-03T00:52:00Z"
+        }
+      ],
       "execution_role": "EXECUTOR"
     },
     {
       "id": "DB-002",
       "title": "Run initial migration",
       "description": "Execute initial database migration to create all tables and enums",
-      "status": "backlog",
-      "owner": null,
+      "status": "done",
+      "owner": "banner",
       "acceptance_criteria": [
         "All tables created",
         "Enums defined",
         "Foreign keys set",
         "Indexes created"
       ],
-      "comments": [],
+      "comments": [
+        {
+          "author": "banner",
+          "text": "Migration executed successfully. Created tables: tasks, acceptance_criteria, comments, movement_history, audit_logs. All enums and indexes created.",
+          "timestamp": "2026-03-03T00:52:00Z"
+        }
+      ],
       "execution_role": "EXECUTOR"
     },
     {
