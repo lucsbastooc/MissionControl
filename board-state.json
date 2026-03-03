@@ -1033,6 +1033,47 @@
           "timestamp": "2026-03-02T21:20:00Z"
         }
       ]
+    },
+    {
+      "id": "FEATURE-HIST-001",
+      "title": "Task Movement History",
+      "description": "Record every status transition with actor and timestamp",
+      "status": "backlog",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Record from_status",
+        "Record to_status",
+        "Record moved_by",
+        "Record timestamp",
+        "Display in modal"
+      ]
+    },
+    {
+      "id": "FEATURE-DND-V2-001",
+      "title": "Drag and Drop Task Management v2",
+      "description": "Drag between columns, reorder within column, status auto-update, real-time sync",
+      "status": "backlog",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Drag between columns",
+        "Reorder within column",
+        "Status auto-update",
+        "Visual feedback",
+        "Real-time sync"
+      ]
+    },
+    {
+      "id": "FEATURE-MODAL-V3-001",
+      "title": "Task Detail Modal v3",
+      "description": "Modal with lifecycle, history, comments, actions",
+      "status": "backlog",
+      "owner": "jarvis",
+      "acceptance_criteria": [
+        "Modal opens on click",
+        "Lifecycle history",
+        "Comments section",
+        "Actions panel"
+      ]
     }
   ],
   "updatedAt": "2026-03-02T21:20:00Z"
