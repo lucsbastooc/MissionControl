@@ -11,7 +11,7 @@
       "id": "EPIC-1-001",
       "title": "Initialize monorepo with pnpm workspaces",
       "description": "Set up monorepo structure with /apps /web /api /shared-types",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Monorepo created",
