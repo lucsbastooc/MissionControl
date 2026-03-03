@@ -507,7 +507,7 @@
     {
       "id": "DB-001",
       "title": "Set up Docker Compose",
-      "status": "backlog",
+      "status": "in_progress",
       "owner": "jarvis",
       "execution_role": "EXECUTOR",
       "acceptance_criteria": [
