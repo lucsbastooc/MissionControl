@@ -11,7 +11,7 @@
       "id": "EPIC-1-001",
       "title": "Initialize monorepo with pnpm workspaces",
       "description": "Set up monorepo structure with /apps /web /api /shared-types",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Monorepo created",
@@ -23,7 +23,7 @@
       "id": "EPIC-1-002-T1",
       "title": "Create shared-types package structure",
       "description": "Set up package.json, tsconfig, export entry points",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Package builds without errors",
@@ -35,7 +35,7 @@
       "id": "EPIC-1-002-T2",
       "title": "Define TypeScript interfaces (Task, Comment, Status)",
       "description": "Create interfaces for Task, Comment, Status, Board types",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Task interface includes id, title, description, status, owner, acceptance_criteria, comments",
@@ -47,7 +47,7 @@
       "id": "EPIC-1-002-T3",
       "title": "Export types from shared-types",
       "description": "Export all interfaces and types for consumption by other packages",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "All types exportable",
@@ -59,7 +59,7 @@
       "id": "EPIC-1-002",
       "title": "Create shared-types package",
       "description": "Define Task, Comment, Status types",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Types defined",
@@ -769,7 +769,7 @@
       "id": "FEATURE-001",
       "title": "Task Detail Modal",
       "description": "When clicking on a task card, a modal must open displaying full task details",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Modal opens on click",
@@ -781,7 +781,7 @@
       "id": "FEATURE-002",
       "title": "Drag and Drop Task Management",
       "description": "Implement drag and drop functionality in the Kanban board",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Drag task between columns",
@@ -800,7 +800,7 @@
       "id": "FEATURE-DND-001",
       "title": "Drag and Drop Task Management",
       "description": "Implement drag and drop",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Drag between columns",
@@ -812,7 +812,7 @@
       "id": "FEATURE-001-V2",
       "title": "Task Detail Modal v2",
       "description": "Modal with lifecycle history, comments, actions panel",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis",
       "acceptance_criteria": [
         "Modal opens on click",
@@ -825,8 +825,26 @@
       "id": "FEATURE-001-V2-T1",
       "title": "Decompose Task Modal into subtasks",
       "description": "Break FEATURE-001-V2 into atomic tasks",
-      "status": "done",
+      "status": "backlog",
       "owner": "jarvis"
+    },
+    {
+      "id": "TASK-001",
+      "title": "Add new feature: Real-time sync",
+      "status": "in_progress",
+      "owner": "jarvis"
+    },
+    {
+      "id": "TASK-002",
+      "title": "Implement WebSocket support",
+      "status": "in_progress",
+      "owner": "banner"
+    },
+    {
+      "id": "TASK-003",
+      "title": "Add user authentication",
+      "status": "backlog",
+      "owner": "banner"
     }
   ],
   "updatedAt": "2026-03-02T19:40:00Z"
