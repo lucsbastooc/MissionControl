@@ -486,7 +486,7 @@
     {
       "id": "FEATURE-HIST-001",
       "title": "Task Movement History",
-      "status": "in_progress",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "ARCHITECT"
     },
@@ -507,7 +507,7 @@
     {
       "id": "DB-001",
       "title": "Set up Docker Compose",
-      "status": "in_progress",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "EXECUTOR",
       "acceptance_criteria": [
@@ -520,7 +520,7 @@
     {
       "id": "DB-002",
       "title": "Run initial migration",
-      "status": "backlog",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "EXECUTOR",
       "acceptance_criteria": [
@@ -534,7 +534,7 @@
     {
       "id": "DB-003",
       "title": "Connect API to PostgreSQL",
-      "status": "backlog",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "EXECUTOR",
       "acceptance_criteria": [
@@ -547,7 +547,7 @@
     {
       "id": "DB-004",
       "title": "Implement CRUD operations",
-      "status": "backlog",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "EXECUTOR",
       "acceptance_criteria": [
@@ -561,7 +561,7 @@
     {
       "id": "DB-005",
       "title": "Add movement_history triggers",
-      "status": "backlog",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "DATA_ENGINEER",
       "acceptance_criteria": [
@@ -573,7 +573,7 @@
     {
       "id": "DB-006",
       "title": "Review schema",
-      "status": "backlog",
+      "status": "done",
       "owner": "jarvis",
       "execution_role": "REVIEWER",
       "acceptance_criteria": [
